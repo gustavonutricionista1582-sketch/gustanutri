@@ -93,64 +93,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 3. Image Comparison Sliders (Máscara de Antes e Depois Interativa)
-  const compareSliders = document.querySelectorAll('.img-compare');
-  compareSliders.forEach(container => {
-    const rangeInput = container.querySelector('.img-compare-slider');
-    if (!rangeInput) return;
-
-    const setPosition = (pos) => {
-      const clamped = Math.max(0, Math.min(100, pos));
-      container.style.setProperty('--position', `${clamped}%`);
-      rangeInput.value = clamped;
-    };
-
-    rangeInput.addEventListener('input', (e) => {
-      setPosition(parseFloat(e.target.value));
-    });
-
-    rangeInput.addEventListener('change', (e) => {
-      setPosition(parseFloat(e.target.value));
-    });
-
-    const onStart = () => container.classList.add('is-active');
-    const onEnd = () => container.classList.remove('is-active');
-
-    rangeInput.addEventListener('mousedown', onStart);
-    window.addEventListener('mouseup', onEnd);
-    rangeInput.addEventListener('touchstart', onStart, { passive: true });
-    window.addEventListener('touchend', onEnd, { passive: true });
-
-    // Permite clicar em qualquer ponto da foto para mover a linha
-    container.addEventListener('pointerdown', (e) => {
-      if (e.target === rangeInput) return;
-      const rect = container.getBoundingClientRect();
-      const pos = ((e.clientX - rect.left) / rect.width) * 100;
-      setPosition(pos);
-    });
-  });
-
-  // 4. Carousel de Resultados (Touch + Buttons + Dots)
-  const carouselTrack = document.querySelector('.carousel-track');
-  const slides = document.querySelectorAll('.carousel-slide');
-  const btnPrev = document.querySelector('.carousel-btn-prev');
-  const btnNext = document.querySelector('.carousel-btn-next');
-  const dotsContainer = document.querySelector('.carousel-dots');
+  // 3. Carousel de Resultados (Antes e Depois)
+  const carouselTrack = document.querySelector('.results-carousel-container .carousel-track');
+  const slides = document.querySelectorAll('.results-carousel-container .carousel-slide');
+  const btnPrev = document.querySelector('.results-carousel-container .carousel-btn-prev');
+  const btnNext = document.querySelector('.results-carousel-container .carousel-btn-next');
+  const dotsContainer = document.querySelector('.results-carousel-container .carousel-dots');
 
   if (carouselTrack && slides.length > 0) {
     let currentIndex = 0;
-    let itemsPerView = getItemsPerView();
-    let maxIndex = Math.max(0, slides.length - itemsPerView);
-
+    
     function getItemsPerView() {
       if (window.innerWidth >= 1024) return 3;
       if (window.innerWidth >= 768) return 2;
       return 1;
     }
 
+    function getMaxIndex() {
+      return Math.max(0, slides.length - getItemsPerView());
+    }
+
     function createDots() {
       if (!dotsContainer) return;
       dotsContainer.innerHTML = '';
+      const maxIndex = getMaxIndex();
       const numDots = maxIndex + 1;
       if (numDots <= 1) return;
 
@@ -164,8 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateCarousel() {
-      itemsPerView = getItemsPerView();
-      maxIndex = Math.max(0, slides.length - itemsPerView);
+      const maxIndex = getMaxIndex();
       if (currentIndex > maxIndex) currentIndex = maxIndex;
 
       const slideWidth = slides[0].getBoundingClientRect().width;
@@ -188,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function goToSlide(index) {
+      const maxIndex = getMaxIndex();
       currentIndex = Math.max(0, Math.min(index, maxIndex));
       updateCarousel();
     }
@@ -204,17 +170,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Touch Swipe Support (ignora se estiver arrastando a máscara de comparação)
+    // Touch Swipe Support para Celular / Tablet
     let startX = 0;
     let currentX = 0;
     let isDragging = false;
 
     carouselTrack.addEventListener('touchstart', (e) => {
-      // Se tocou dentro do slider de comparação, deixa o slider agir livremente
-      if (e.target.closest('.img-compare')) {
-        isDragging = false;
-        return;
-      }
       startX = e.touches[0].clientX;
       isDragging = true;
     }, { passive: true });

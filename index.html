@@ -11,11 +11,13 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   
   <title>Gustavo Souza | Nutricionista Esportivo em Caucaia - CE</title>
   <meta name="description" content="Nutrição esportiva personalizada para emagrecimento, hipertrofia e performance. Atendimento presencial em Caucaia/CE e online. Agende sua consulta.">
   <meta name="author" content="Gustavo Souza">
-  <link rel="canonical" href="/">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
   <!-- Open Graph / Facebook -->
@@ -23,17 +25,18 @@
   <meta property="og:site_name" content="Gustavo Souza — Nutricionista Esportivo">
   <meta property="og:title" content="Gustavo Souza | Nutricionista Esportivo em Caucaia - CE">
   <meta property="og:description" content="Transforme seu corpo com acompanhamento nutricional de verdade. Um plano alimentar 100% individualizado, construído para o seu objetivo, sua rotina e o seu esporte.">
-  <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/20be8e9d-5574-4bac-8b12-e38457a24811/id-preview-db4b318c--a1ed5314-d786-4483-9658-55f9cb4c5304.lovable.app-1783115321858.png">
+  <meta property="og:image" content="images/gustavo-hero.png">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Gustavo Souza | Nutricionista Esportivo em Caucaia - CE">
   <meta name="twitter:description" content="Transforme seu corpo com acompanhamento nutricional de verdade. Um plano alimentar 100% individualizado, construído para o seu objetivo, sua rotina e o seu esporte.">
-  <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/20be8e9d-5574-4bac-8b12-e38457a24811/id-preview-db4b318c--a1ed5314-d786-4483-9658-55f9cb4c5304.lovable.app-1783115321858.png">
+  <meta name="twitter:image" content="images/gustavo-hero.png">
 
-  <!-- Google Fonts Preconnect -->
+  <!-- Google Fonts Preconnect & Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Structured Data / Schema.org -->
   <script type="application/ld+json">
@@ -492,13 +495,13 @@
           </p>
         </div>
 
-        <div class="carousel-container">
-          <!-- Buttons -->
-          <button class="carousel-btn carousel-btn-prev" aria-label="Slide anterior">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        <div class="carousel-container results-carousel-container">
+          <!-- Navigation Arrows -->
+          <button class="carousel-btn carousel-btn-prev" aria-label="Resultado anterior">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
           </button>
-          <button class="carousel-btn carousel-btn-next" aria-label="Próximo slide">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <button class="carousel-btn carousel-btn-next" aria-label="Próximo resultado">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
           </button>
 
           <!-- Viewport -->
@@ -507,29 +510,19 @@
               <!-- Slide 1 -->
               <div class="carousel-slide">
                 <div class="result-card">
-                  <div class="img-compare" data-compare>
-                    <img src="images/resultado-2-depois.jpg" alt="Depois — Paciente Gustavo Souza" class="img-compare-img img-compare-after" loading="lazy">
-                    <div class="img-compare-overlay">
-                      <img src="images/resultado-2-antes.jpg" alt="Antes — Paciente Gustavo Souza" class="img-compare-img img-compare-before" loading="lazy">
+                  <div class="result-side-by-side">
+                    <div class="result-half result-half-before">
+                      <img src="images/resultado-2-antes.jpg" alt="Antes — Paciente Gustavo Souza" class="result-img" loading="lazy">
+                      <span class="compare-badge badge-antes">Antes</span>
                     </div>
-                    <div class="img-compare-handle" aria-hidden="true">
-                      <div class="handle-line"></div>
-                      <div class="handle-thumb">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                      </div>
-                      <div class="handle-line"></div>
+                    <div class="result-divider" aria-hidden="true"></div>
+                    <div class="result-half result-half-after">
+                      <img src="images/resultado-2-depois.jpg" alt="Depois — Paciente Gustavo Souza" class="result-img" loading="lazy">
+                      <span class="compare-badge badge-depois">Depois</span>
                     </div>
-                    <span class="compare-badge badge-antes">Antes</span>
-                    <span class="compare-badge badge-depois">Depois</span>
-                    <input type="range" min="0" max="100" value="50" class="img-compare-slider" aria-label="Arraste para comparar antes e depois">
                   </div>
                   <div class="result-card-info">
                     <span class="result-card-tag">Emagrecimento &amp; Performance</span>
-                    <span class="result-card-hint">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                      Arraste para comparar
-                    </span>
                   </div>
                 </div>
               </div>
@@ -537,29 +530,19 @@
               <!-- Slide 2 -->
               <div class="carousel-slide">
                 <div class="result-card">
-                  <div class="img-compare" data-compare>
-                    <img src="images/resultado-3-depois.jpg" alt="Depois — Paciente Gustavo Souza" class="img-compare-img img-compare-after" loading="lazy">
-                    <div class="img-compare-overlay">
-                      <img src="images/resultado-3-antes.jpg" alt="Antes — Paciente Gustavo Souza" class="img-compare-img img-compare-before" loading="lazy">
+                  <div class="result-side-by-side">
+                    <div class="result-half result-half-before">
+                      <img src="images/resultado-3-antes.jpg" alt="Antes — Paciente Gustavo Souza" class="result-img" loading="lazy">
+                      <span class="compare-badge badge-antes">Antes</span>
                     </div>
-                    <div class="img-compare-handle" aria-hidden="true">
-                      <div class="handle-line"></div>
-                      <div class="handle-thumb">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                      </div>
-                      <div class="handle-line"></div>
+                    <div class="result-divider" aria-hidden="true"></div>
+                    <div class="result-half result-half-after">
+                      <img src="images/resultado-3-depois.jpg" alt="Depois — Paciente Gustavo Souza" class="result-img" loading="lazy">
+                      <span class="compare-badge badge-depois">Depois</span>
                     </div>
-                    <span class="compare-badge badge-antes">Antes</span>
-                    <span class="compare-badge badge-depois">Depois</span>
-                    <input type="range" min="0" max="100" value="50" class="img-compare-slider" aria-label="Arraste para comparar antes e depois">
                   </div>
                   <div class="result-card-info">
                     <span class="result-card-tag">Definição &amp; Hipertrofia</span>
-                    <span class="result-card-hint">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                      Arraste para comparar
-                    </span>
                   </div>
                 </div>
               </div>
@@ -567,29 +550,19 @@
               <!-- Slide 3 -->
               <div class="carousel-slide">
                 <div class="result-card">
-                  <div class="img-compare" data-compare>
-                    <img src="images/resultado-4-depois.jpg" alt="Depois — Paciente Gustavo Souza" class="img-compare-img img-compare-after" loading="lazy">
-                    <div class="img-compare-overlay">
-                      <img src="images/resultado-4-antes.jpg" alt="Antes — Paciente Gustavo Souza" class="img-compare-img img-compare-before" loading="lazy">
+                  <div class="result-side-by-side">
+                    <div class="result-half result-half-before">
+                      <img src="images/resultado-4-antes.jpg" alt="Antes — Paciente Gustavo Souza" class="result-img" loading="lazy">
+                      <span class="compare-badge badge-antes">Antes</span>
                     </div>
-                    <div class="img-compare-handle" aria-hidden="true">
-                      <div class="handle-line"></div>
-                      <div class="handle-thumb">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                      </div>
-                      <div class="handle-line"></div>
+                    <div class="result-divider" aria-hidden="true"></div>
+                    <div class="result-half result-half-after">
+                      <img src="images/resultado-4-depois.jpg" alt="Depois — Paciente Gustavo Souza" class="result-img" loading="lazy">
+                      <span class="compare-badge badge-depois">Depois</span>
                     </div>
-                    <span class="compare-badge badge-antes">Antes</span>
-                    <span class="compare-badge badge-depois">Depois</span>
-                    <input type="range" min="0" max="100" value="50" class="img-compare-slider" aria-label="Arraste para comparar antes e depois">
                   </div>
                   <div class="result-card-info">
                     <span class="result-card-tag">Recomposição Corporal</span>
-                    <span class="result-card-hint">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                      Arraste para comparar
-                    </span>
                   </div>
                 </div>
               </div>
@@ -597,29 +570,19 @@
               <!-- Slide 4 -->
               <div class="carousel-slide">
                 <div class="result-card">
-                  <div class="img-compare" data-compare>
-                    <img src="images/resultado-1-depois.jpg" alt="Depois — Paciente Gustavo Souza" class="img-compare-img img-compare-after" loading="lazy">
-                    <div class="img-compare-overlay">
-                      <img src="images/resultado-1-antes.jpg" alt="Antes — Paciente Gustavo Souza" class="img-compare-img img-compare-before" loading="lazy">
+                  <div class="result-side-by-side">
+                    <div class="result-half result-half-before">
+                      <img src="images/resultado-1-antes.jpg" alt="Antes — Paciente Gustavo Souza" class="result-img" loading="lazy">
+                      <span class="compare-badge badge-antes">Antes</span>
                     </div>
-                    <div class="img-compare-handle" aria-hidden="true">
-                      <div class="handle-line"></div>
-                      <div class="handle-thumb">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                      </div>
-                      <div class="handle-line"></div>
+                    <div class="result-divider" aria-hidden="true"></div>
+                    <div class="result-half result-half-after">
+                      <img src="images/resultado-1-depois.jpg" alt="Depois — Paciente Gustavo Souza" class="result-img" loading="lazy">
+                      <span class="compare-badge badge-depois">Depois</span>
                     </div>
-                    <span class="compare-badge badge-antes">Antes</span>
-                    <span class="compare-badge badge-depois">Depois</span>
-                    <input type="range" min="0" max="100" value="50" class="img-compare-slider" aria-label="Arraste para comparar antes e depois">
                   </div>
                   <div class="result-card-info">
                     <span class="result-card-tag">Preparação para Competição</span>
-                    <span class="result-card-hint">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                      Arraste para comparar
-                    </span>
                   </div>
                 </div>
               </div>
@@ -627,29 +590,19 @@
               <!-- Slide 5 -->
               <div class="carousel-slide">
                 <div class="result-card">
-                  <div class="img-compare" data-compare>
-                    <img src="images/resultado-5-depois.jpg" alt="Depois — Paciente Gustavo Souza" class="img-compare-img img-compare-after" loading="lazy">
-                    <div class="img-compare-overlay">
-                      <img src="images/resultado-5-antes.jpg" alt="Antes — Paciente Gustavo Souza" class="img-compare-img img-compare-before" loading="lazy">
+                  <div class="result-side-by-side">
+                    <div class="result-half result-half-before">
+                      <img src="images/resultado-5-antes.jpg" alt="Antes — Paciente Gustavo Souza" class="result-img" loading="lazy">
+                      <span class="compare-badge badge-antes">Antes</span>
                     </div>
-                    <div class="img-compare-handle" aria-hidden="true">
-                      <div class="handle-line"></div>
-                      <div class="handle-thumb">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                      </div>
-                      <div class="handle-line"></div>
+                    <div class="result-divider" aria-hidden="true"></div>
+                    <div class="result-half result-half-after">
+                      <img src="images/resultado-5-depois.jpg" alt="Depois — Paciente Gustavo Souza" class="result-img" loading="lazy">
+                      <span class="compare-badge badge-depois">Depois</span>
                     </div>
-                    <span class="compare-badge badge-antes">Antes</span>
-                    <span class="compare-badge badge-depois">Depois</span>
-                    <input type="range" min="0" max="100" value="50" class="img-compare-slider" aria-label="Arraste para comparar antes e depois">
                   </div>
                   <div class="result-card-info">
                     <span class="result-card-tag">Emagrecimento &amp; Saúde</span>
-                    <span class="result-card-hint">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                      Arraste para comparar
-                    </span>
                   </div>
                 </div>
               </div>
