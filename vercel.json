@@ -1,6 +1,12 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/link",
+      "destination": "/link.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

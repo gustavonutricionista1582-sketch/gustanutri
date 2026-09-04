@@ -157,7 +157,7 @@ Todos os botões principais devem direcionar para o WhatsApp.
 
 Mensagem automática:
 
-Olá Gustavo! Encontrei seu site e gostaria de agendar uma consulta.
+Olá Gusta, Vim pelo site e gostaria de saber mais 
 
 Estrutura
 
